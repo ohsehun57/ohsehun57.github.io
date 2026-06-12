@@ -1,15 +1,431 @@
 ```html
-<header>
-    <h1>Denis Machaca</h1>
-    <p>Estudiante de Ingeniería Estadística e Informática | Desarrollador de Software | Emprendedor Tecnológico</p>
-</header>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denis Machaca | Dashboard Profesional</title>
 
-<section class="card">
-    <h2>Sobre Mí</h2>
-    <p>
-        Mi nombre es <strong>Denis Machaca</strong>. Nací el <strong>25 de diciembre</strong> y actualmente soy estudiante de Ingeniería Estadística e Informática.
-        Me apasiona el desarrollo de software, la ciencia de datos, la inteligencia artificial y la creación de sistemas innovadores para resolver problemas reales.
-        Tengo experiencia en programación con Python, C++, desarrollo de interfaces gráficas, análisis estadístico y proyectos tecnológicos orientados a la automatización y gestión empresarial.
-    </p>
-</section>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:280px;
+    background:#111827;
+    padding:30px;
+    position:fixed;
+    height:100%;
+    border-right:1px solid rgba(255,255,255,.1);
+}
+
+.profile{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#06b6d4,#2563eb);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    font-size:50px;
+    font-weight:bold;
+}
+
+.profile h2{
+    margin-top:15px;
+}
+
+.profile p{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.menu a{
+    display:block;
+    color:#cbd5e1;
+    text-decoration:none;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    background:#2563eb;
+    color:white;
+}
+
+/* MAIN */
+.main{
+    margin-left:280px;
+    width:100%;
+    padding:30px;
+}
+
+.top{
+    margin-bottom:30px;
+}
+
+.top h1{
+    font-size:38px;
+}
+
+.top span{
+    color:#38bdf8;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.card h3{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.card .number{
+    font-size:34px;
+    font-weight:bold;
+    margin-top:10px;
+    color:#38bdf8;
+}
+
+.section{
+    background:#1e293b;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:25px;
+}
+
+.section h2{
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.timeline{
+    border-left:3px solid #2563eb;
+    padding-left:20px;
+}
+
+.timeline-item{
+    margin-bottom:25px;
+}
+
+.timeline-item h4{
+    color:#fff;
+}
+
+.timeline-item p{
+    color:#cbd5e1;
+}
+
+.skill{
+    margin-bottom:15px;
+}
+
+.skill-name{
+    margin-bottom:8px;
+}
+
+.bar{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+}
+
+.progress{
+    height:10px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#06b6d4,#2563eb);
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.project{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.project h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.contact-box{
+    background:#0f172a;
+    padding:15px;
+    border-radius:12px;
+}
+
+footer{
+    text-align:center;
+    margin-top:20px;
+    color:#94a3b8;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main{
+    margin-left:0;
+}
+
+.dashboard{
+    flex-direction:column;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="sidebar">
+
+<div class="profile">
+<div class="avatar">DM</div>
+<h2>Denis Machaca</h2>
+<p>Estudiante de Ingeniería Estadística e Informática</p>
+</div>
+
+<div class="menu">
+<a href="#inicio">🏠 Inicio</a>
+<a href="#perfil">👤 Perfil</a>
+<a href="#habilidades">💻 Habilidades</a>
+<a href="#proyectos">🚀 Proyectos</a>
+<a href="#educacion">🎓 Educación</a>
+<a href="#contacto">📞 Contacto</a>
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="top" id="inicio">
+<h1>Hola, soy <span>Denis Machaca</span></h1>
+<p>Nacido el 25 de diciembre • Apasionado por la programación, la inteligencia artificial, la ciencia de datos y el desarrollo de sistemas modernos.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Lenguajes</h3>
+<div class="number">6+</div>
+</div>
+
+<div class="card">
+<h3>Proyectos</h3>
+<div class="number">20+</div>
+</div>
+
+<div class="card">
+<h3>Tecnologías</h3>
+<div class="number">15+</div>
+</div>
+
+<div class="card">
+<h3>Experiencia</h3>
+<div class="number">∞</div>
+</div>
+
+</div>
+
+<div class="section" id="perfil">
+<h2>Perfil Profesional</h2>
+
+<p>
+Soy estudiante de Ingeniería Estadística e Informática con interés en el desarrollo de software, inteligencia artificial, análisis de datos, ciencia de datos, machine learning y sistemas de gestión empresariales.
+Me gusta construir soluciones tecnológicas innovadoras utilizando Python, C++, HTML, CSS, JavaScript y herramientas de análisis estadístico.
+</p>
+
+</div>
+
+<div class="section" id="habilidades">
+
+<h2>Habilidades Técnicas</h2>
+
+<div class="skill">
+<div class="skill-name">Python</div>
+<div class="bar"><div class="progress" style="width:95%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">C++</div>
+<div class="bar"><div class="progress" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">HTML / CSS</div>
+<div class="bar"><div class="progress" style="width:88%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Estadística</div>
+<div class="bar"><div class="progress" style="width:92%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Series de Tiempo</div>
+<div class="bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Machine Learning</div>
+<div class="bar"><div class="progress" style="width:80%"></div></div>
+</div>
+
+</div>
+
+<div class="section" id="proyectos">
+
+<h2>Proyectos Destacados</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>EXOSNEAKER</h3>
+<p>
+Sistema inteligente de gestión de inventarios, ventas, catálogo web y análisis empresarial para tiendas de zapatillas.
+</p>
+</div>
+
+<div class="project">
+<h3>Biblioteca Inteligente</h3>
+<p>
+Sistema desarrollado en Python para gestión de libros, usuarios y reportes automatizados.
+</p>
+</div>
+
+<div class="project">
+<h3>Graficador Matemático</h3>
+<p>
+Aplicación profesional en C++ y WinAPI para graficación de funciones e integración numérica.
+</p>
+</div>
+
+<div class="project">
+<h3>Analítica de Datos</h3>
+<p>
+Modelos estadísticos, ARIMA, pronósticos y análisis de series temporales utilizando EViews y Python.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="educacion">
+
+<h2>Trayectoria Académica</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h4>Universidad Nacional del Altiplano</h4>
+<p>Ingeniería Estadística e Informática</p>
+</div>
+
+<div class="timeline-item">
+<h4>Especialización</h4>
+<p>Ciencia de Datos, IA, Desarrollo de Software y Estadística Aplicada</p>
+</div>
+
+<div class="timeline-item">
+<h4>Objetivo Profesional</h4>
+<p>Convertirme en un profesional líder en innovación tecnológica y análisis de datos.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="contacto">
+
+<h2>Contacto</h2>
+
+<div class="contact">
+
+<div class="contact-box">
+📍 Puno, Perú
+</div>
+
+<div class="contact-box">
+🎂 25 de diciembre
+</div>
+
+<div class="contact-box">
+🎓 Ingeniería Estadística e Informática
+</div>
+
+<div class="contact-box">
+💻 Desarrollador de Software
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Denis Machaca | Dashboard Profesional
+</footer>
+
+</div>
+
+</div>
+
+</body>
+</html>
 ```
